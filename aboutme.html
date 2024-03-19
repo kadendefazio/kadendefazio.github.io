@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="Untitled design.png">
+</head>
+<body>
+    <div class="container fade-in">
+<header>
+    <div class="container">
+        <h1>My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Projects</a></li>
+                <li><a href="https://kadencodes.itch.io/">Games</a></li>
+                <li><a href="aboutme.html">About Me</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+  
+    </section>
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="image-container">
+            <img class="image"src="kaden.jpg" width="300" height="300">
+                </div>
+            <p class="paragraph">Hello! My name is Kaden DeFazio, and I'm passionate about game development. As a burgeoning game developer, I'm on a mission to make my mark in the industry. From a young age, I've been captivated by the intricacies of video games—the way Sonic dashes through levels or how Mario gracefully navigates obstacles. These experiences ignited my desire to create my own interactive worlds. Today, fueled by that childhood fascination and armed with creativity and determination, I'm committed to crafting captivating gaming experiences that resonate with players of all ages. My goal is simple: to develop games that not only entertain but also leave a lasting impression, sparking joy and wonder in every player who picks up a controller.</p>
+        
+    </div>
+    </section>
+
+</main>
+<footer id="contact">
+    <div class="container">
+        <h2>Contact</h2>
+        <p>Email: <a id="emailLink"href="mailto:kadendefazioschool@gmail.com">kadendefazioschool@gmail.com</a></p>
+        
+        
+        
+    </div>
+</footer>
+</div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var elements = document.querySelectorAll('.fade-in');
+        elements.forEach(function(element) {
+            element.classList.add('fade-in-active');
+        });
+    });
+
+    function smoothScroll(event) {
+        event.preventDefault(); // Prevent default link behavior
+        const targetId = event.target.getAttribute('href'); // Get the href attribute of the clicked link
+        const targetPosition = document.querySelector(targetId).offsetTop; // Get the vertical position of the target element
+        const startPosition = window.pageYOffset; // Get the current scroll position
+        const distance = targetPosition - startPosition; // Calculate the distance to scroll
+        const duration = 1000; // Set the duration of the scroll animation (in milliseconds)
+        let startTime = null;
+
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const scrollAmount = ease(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, scrollAmount);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+
+        // Easing function for smooth animation
+        function ease(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+
+        requestAnimationFrame(animation);
+    }
+</script>
+
+
+</body>
+</html>
+

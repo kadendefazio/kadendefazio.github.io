@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'MadimiOne-Regular';
+    src: url('WEBSITEPORTFOLIO/MadimiOne-Regular.ttf') format('truetype'); /* Adjust the path and format if needed */
+  }
+  body {
+    font-family: 'MadimiOne-Regular', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('backsite.png');
+   
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+    
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 50px 0;
+    
+}
+
+section {
+    margin-bottom: 50px;
+    
+}
+
+section h2 {
+    color: #333;
+    
+}
+
+.project {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    
+}
+#emailLink{
+    color:white;
+    text-decoration-line: none;
+}
+#gameJam{
+    color:black;
+    font-weight: bold;
+    text-decoration-line: none;
+}
+.image-container {
+    display: flex;
+    justify-content: center; /* Aligns the image horizontally */
+
+}
+
+.paragraph{
+    text-align: center;
+    font-weight: bold;
+    font-family: 'MadimiOne-Regular', 'sans-serif';
+    color:black;
+}
+
+.fade-in {
+    opacity: 0; /* Start with opacity 0 */
+    transition: opacity 1s ease-in-out; /* Transition opacity over 1 second */
+}
+
+.fade-in-active {
+    opacity: 1; /* Change opacity to 1 when fade-in-active class is added */
+}
+/* Add this CSS to your existing styles.css file */
+a {
+    position: relative;
+    text-decoration: none;
+    color: inherit; /* Ensure link color inheritance */
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0; /* Start with zero width */
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s ease-in-out; /* Transition width for sliding effect */
+}
+
+a:hover::after {
+    width: 100%; /* Slide the underline to cover the full width */
+}
